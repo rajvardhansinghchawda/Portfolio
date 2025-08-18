@@ -1,17 +1,30 @@
 <div class="card shadow-sm">
     <div class="card-body">
         <h4 class="card-title mb-4"><i class="fas fa-code me-2"></i>Skills</h4>
-        {% for skill in skills %}
+        
+        <!-- Filter Buttons (Updated) -->
         <div class="mb-3">
-            <div class="d-flex justify-content-between">
-                <span>{{ skill.name }}</span>
-                <small>{{ skill.proficiency }}/5</small>
-            </div>
-            <div class="progress" style="height: 8px;">
-                <div class="progress-bar bg-success" 
-                     style="width: {{ skill.proficiency}}%"></div>
-            </div>
+            <button class="btn btn-sm btn-outline-primary skill-filter active" data-category="ALL">All</button>
+            <button class="btn btn-sm btn-outline-danger skill-filter" data-category="LANG">Languages</button>
+            <button class="btn btn-sm btn-outline-success skill-filter" data-category="TOOL">Tools</button>
         </div>
-        {% endfor %}
+
+        <!-- Skills Container -->
+        <div id="skills-container">
+            {% for skill in skills %}
+            <div class="mb-3 skill-item" data-category="{{ skill.category }}">
+                <div class="d-flex justify-content-between">
+                    <span>{{ skill.name }}</span>
+                    <small>{{ skill.proficiency }}/5</small>
+                </div>
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar bg-success" 
+                        
+                    style="width: {% widthratio skill.proficiency 1 20 %}%"
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
