@@ -1,0 +1,19 @@
+<div class="mt-5">
+    <h3 class="mb-4"><i class="fas fa-trophy me-2"></i>Achievements</h3>
+    <div class="row">
+        {% for achievement in achievements %}
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{ achievement.title }}</h5>
+                    <p class="text-muted">{{ achievement.issuer }}</p>
+                    <a href="{{ achievement.verify_url }}" target="_blank" 
+                       class="btn btn-sm btn-outline-primary">
+                        Verify Certificate
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

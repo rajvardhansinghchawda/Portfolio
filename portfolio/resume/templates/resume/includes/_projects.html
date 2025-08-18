@@ -1,0 +1,38 @@
+{% comment %} {% for project in projects %}
+<div class="card mb-3 project-card">
+    <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.resume_description }}</p>
+        <div class="d-flex justify-content-between">
+            <span class="badge bg-{% if project.project_type == 'JAVA' %}danger{% else %}primary{% endif %}">
+                {{ project.get_project_type_display }}
+            </span>
+            {% if project.github_url %}
+            <a href="{{ project.github_url }}" class="btn btn-sm btn-outline-dark">GitHub</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %} {% endcomment %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for project in projects %}
+    <div class="col">
+        <div class="card h-100 project-card">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.resume_description }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge rounded-pill bg-{% if project.project_type == 'JAVA' %}danger{% else %}primary{% endif %}">
+                        {{ project.get_project_type_display }}
+                    </span>
+                    {% if project.github_url %}
+                    <a href="{{ project.github_url }}" class="btn btn-sm btn-outline-dark">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
