@@ -4,11 +4,12 @@
         
         <!-- Filter Buttons (Updated) -->
         <div class="mb-3">
-            <button class="btn btn-sm btn-outline-primary skill-filter active" data-category="ALL">All</button>
+            {% comment %} <button class="btn btn-sm btn-outline-primary skill-filter active" data-category="ALL">All</button>
             <button class="btn btn-sm btn-outline-danger skill-filter" data-category="LANG">Languages</button>
             <button class="btn btn-sm btn-outline-success skill-filter" data-category="TOOL">Tools</button>
-        </div>
+        {% endcomment %}
 
+            </div>
         <!-- Skills Container -->
         <div id="skills-container">
             {% for skill in skills %}

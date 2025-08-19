@@ -16,7 +16,8 @@ class Project(models.Model):
     PROJECT_TYPES = [
         ('JAVA', 'Java'),
         ('PYTHON', 'Python'),
-        ('INTERNSHIP', 'Internship Project')
+        ('INTERNSHIP', 'Internship Project'),
+        ('DJANGO', 'Django')
     ]
     
     title = models.CharField(max_length=100)
